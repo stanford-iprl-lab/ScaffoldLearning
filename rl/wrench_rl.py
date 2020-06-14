@@ -25,9 +25,9 @@ simulation_dir = '../simulation'
 sys.path.insert(0, simulation_dir)
 
 from Wrench_Manipulation_Env import RobotEnv
-ExName = "plugging"
-sys.path.insert(0,'/juno/u/lins2/bullet3/build_cmake/examples/pybullet')
-
+ExName = "Wrench_Manipulation"
+sys.path.insert(0,'../external/bullet3.git/build_cmake/examples/pybullet')
+import pybullet
 
 def v_wrap(np_array,dtype=np.float32):
   if np_array.dtype != dtype:
@@ -63,8 +63,6 @@ def push_and_pull(opt, lnet, gnet, done, s_, bs, ba, br, bdone, gamma):
 
   # pull global parameters
   lnet.load_state_dict(gnet.state_dict())
-
-import pybullet
 
 MAX_EP = 15000
 UPDATE_GLOBAL_ITER = 10
