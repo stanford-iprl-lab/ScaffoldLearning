@@ -1,6 +1,0 @@
-[submodule "external/bullet3.git"]
-	path = external/bullet3.git
-	url = https://github.com/linsats/bullet3.git
-[submodule "assets"]
-	path = assets
-	url = https://github.com/linsats/bullet3.git
