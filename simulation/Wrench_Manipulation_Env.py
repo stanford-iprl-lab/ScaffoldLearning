@@ -105,8 +105,8 @@ class RobotEnv():
     self.table_c = self.p.createCollisionShape(self.p.GEOM_BOX,halfExtents=[0.3,0.5,0.15])
     mass = 0
     self.table_id = self.p.createMultiBody(mass,baseCollisionShapeIndex=self.table_c,baseVisualShapeIndex=self.table_v,basePosition=(0.5,0.0,0.2))
-    self.table_textid = self.p.loadTexture(os.path.join(self.texture_dir,"text2.jpg"))
-    self.p.changeVisualShape(self.table_id,-1,textureUniqueId=self.table_textid,specularColor=[0,0,0])
+    self.table_color = [128/255.0,128/255.0,128/255.0,1.0]
+    self.p.changeVisualShape(self.table_id,-1,rgbaColor=self.table_color)
 
     ####  robot initialization
     self.robot = robot.Robot(pybullet_api=self.p,urdf_path=self.urdf_dir)
